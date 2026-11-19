@@ -16,7 +16,7 @@ Do everyday arithmetic, look up earlier calculations, and save results as text f
 
 Open **Tools** from the keypad.
 
-- **Convert** between common units of length, mass, volume, time, and temperature. Rounded conversions show an approximation mark.
+- **Convert** between common units of length, mass, volume, time, and temperature. Rounded conversions show a tilde (~).
 - **Steps** explains how to simplify a fraction or solve an equation of the form `a × x + b = c`.
 - **Graph** plots `y = a x² + b x + c`. Set `a` to zero for a line. Switch to **Table** for exact values at five points.
 

@@ -1,5 +1,9 @@
 # Changes
 
+## 0.1.3
+
+- Mark rounded conversions with a Kindle-compatible approximation symbol.
+
 ## 0.1.2
 
 - Use a Kindle-compatible minus sign in the graph range label.

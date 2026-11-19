@@ -105,7 +105,7 @@ impl Ratio {
         } else {
             format!(".{fraction}")
         };
-        let prefix = if approximation { "≈ " } else { "" };
+        let prefix = if approximation { "~ " } else { "" };
         format!("{prefix}{sign}{}{decimal}", rounded / scale)
     }
 }
@@ -297,7 +297,7 @@ mod tests {
         assert_eq!(convert("32", 4, 1, 0), Ok("0 celsius".into()));
         assert_eq!(convert("0", 4, 0, 2), Ok("273.15 kelvin".into()));
         assert_eq!(convert("1/4", 0, 0, 1), Ok("25 centimeters".into()));
-        assert_eq!(convert("1", 0, 0, 3), Ok("≈ 39.370079 inches".into()));
+        assert_eq!(convert("1", 0, 0, 3), Ok("~ 39.370079 inches".into()));
         assert!(convert("1/0", 0, 0, 1).is_err());
     }
 
