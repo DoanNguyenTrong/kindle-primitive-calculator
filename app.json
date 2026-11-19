@@ -2,7 +2,7 @@
   "schema": 1,
   "id": "primitive-calculator",
   "dir": "calculator",
-  "name": "Primitive Calculator",
+  "name": "Calculator",
   "subtitle": "Decimal arithmetic and history",
   "developer": {
     "name": "Primitive AI"

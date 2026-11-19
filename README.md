@@ -1,6 +1,6 @@
 <div align="center">
 
-# Primitive Calculator
+# Calculator
 
 **A decimal calculator with a large keypad for Kindle e-readers.**
 
@@ -34,7 +34,7 @@ Do everyday arithmetic, look up earlier calculations, and save results as text f
 ## Quick start
 
 Copy the `calculator` and `documents` folders from the local ARMHF package to your Kindle over USB, then eject and open
-**Primitive Calculator** from Primitive Launcher. The app uses the fonts installed by Launcher. [Install guide](INSTALL.md)
+**Calculator** from Primitive Launcher. The app uses the fonts installed by Launcher. [Install guide](INSTALL.md)
 
 ## Status
 

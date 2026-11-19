@@ -1,5 +1,5 @@
 #!/bin/sh
-# Name: Primitive Calculator
+# Name: Calculator
 # Author: Primitive AI
 # DontUseFBInk
 # PrimitiveUSBLease
