@@ -1,12 +1,61 @@
+<div align="center">
+
 # Primitive Calculator
 
-The calculator uses decimal arithmetic with up to 18 digits and 12 decimal places. Results are exact where representable. Nonterminating division is rounded and labelled, and over-precise nondivision results display a message. Copy result writes `/mnt/us/calculator/result.txt` for USB or another local app.
+**A decimal calculator with a large keypad for Kindle e-readers.**
 
-Run `cargo test --offline --workspace` and `cargo run --offline -p calculator-desktop` with
-`doannt-kindle-tools` and `doannt-kindle-launcher` next to this checkout. The desktop target
-writes 1264 × 1680 grayscale previews in `build/previews/`.
+[Install guide](INSTALL.md) · [Device notes](docs/device-notes.md) · [Changelog](CHANGELOG.md)
 
-See [installation instructions](INSTALL.md). The local `app.json` is a listing draft. A
-public listing requires approved artwork and an asset from a published release.
+</div>
 
-Source is PolyForm Noncommercial 1.0.0. Documentation is CC BY-NC-SA 4.0.
+---
+
+Do everyday arithmetic, look up earlier calculations, and save results as text for USB transfer or another app.
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/images/calculator.png" alt="Calculator display and large e-ink keypad" width="260"><br><sub>The calculator keypad</sub></td>
+    <td align="center"><img src="docs/images/calculator-history.png" alt="History showing 0.1 plus 0.2 with the result 0.3" width="260"><br><sub>Calculation history</sub></td>
+    <td align="center"><img src="docs/images/calculator-copy-dark.png" alt="Calculator in dark mode after copying the result to a text file" width="260"><br><sub>Copy result in dark mode</sub></td>
+  </tr>
+</table>
+
+<sub>Desktop simulation at 1264 × 1680 with sample calculations.</sub>
+
+## Highlights
+
+- Decimal arithmetic supports up to 18 digits and 12 decimal places. Results within those limits are exact.
+- Nonterminating division is rounded and labelled. An operation other than division displays a message when the
+  result requires more precision than the calculator supports.
+- **History** keeps earlier calculations. **Copy result** writes `/mnt/us/calculator/result.txt`.
+
+## Quick start
+
+Copy the `calculator` and `documents` folders from the local ARMHF package to your Kindle over USB, then eject and open
+**Primitive Calculator** from Primitive Launcher. The app uses the fonts installed by Launcher. [Install guide](INSTALL.md)
+
+## Status
+
+Desktop simulation and local ARMHF package checks passed on the Mac. Oasis 3 testing of the keypad, orientation, and
+result export is pending. [Device notes](docs/device-notes.md)
+
+## Develop locally
+
+Keep `doannt-kindle-tools` and `doannt-kindle-launcher` next to this checkout. The desktop command writes sample PNGs
+to `build/previews`. The local `app.json` contains draft listing copy.
+
+```sh
+cargo test --offline --locked --workspace
+cargo run --offline --locked -p calculator-desktop -- build/previews
+```
+
+## Licence
+
+Copyright (C) 2026 Doan Nguyen.
+
+App code is licensed under PolyForm Noncommercial 1.0.0. [Code license](LICENSE)
+
+Original documentation and screenshots are licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International (CC BY-NC-SA 4.0). [Documentation and image license](LICENSE-DOCS)
