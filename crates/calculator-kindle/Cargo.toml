@@ -1,0 +1,10 @@
+[package]
+name = "calculator-kindle"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+calculator-core.workspace = true
+calculator-render.workspace = true
+primitive-app.workspace = true

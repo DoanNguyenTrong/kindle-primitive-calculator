@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "id": "primitive-calculator",
+  "dir": "calculator",
+  "name": "Primitive Calculator",
+  "subtitle": "Decimal arithmetic and history",
+  "developer": {
+    "name": "Primitive AI"
+  },
+  "categories": [
+    "utilities"
+  ],
+  "description": "Use large keys for addition, subtraction, multiplication and division. Browse calculation history and copy the current result to a text file.",
+  "repo": "https://github.com/DoanNguyenTrong/kindle-primitive-calculator",
+  "licence": "PolyForm-Noncommercial-1.0.0",
+  "source": "hosted",
+  "icon": "icon.png",
+  "changes": {
+    "network": false,
+    "stops_kindle_ui": false,
+    "starts_at_boot": false,
+    "root_filesystem": false,
+    "hooks": false
+  },
+  "versions": []
+}
