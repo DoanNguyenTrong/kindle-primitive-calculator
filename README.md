@@ -38,8 +38,9 @@ Copy the `calculator` and `documents` folders from the local ARMHF package to yo
 
 ## Status
 
-Desktop simulation and local ARMHF package checks passed on the Mac. Oasis 3 testing of the keypad, orientation, and
-result export is pending. [Device notes](docs/device-notes.md)
+Desktop simulation and local ARMHF package checks passed on the Mac.
+On an ARMHF Kindle Oasis 3 running firmware 5.18.2, Calculator showed an empty History, calculated 2 + 3 as 5,
+and returned to Launcher. Orientation and result export checks are pending. [Device notes](docs/device-notes.md)
 
 ## Develop locally
 
