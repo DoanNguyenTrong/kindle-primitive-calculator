@@ -12,6 +12,18 @@
 
 Do everyday arithmetic, look up earlier calculations, and save results as text for USB transfer or another app.
 
+## Calculator tools
+
+Open **Tools** from the keypad.
+
+- **Convert** between common units of length, mass, volume, time, and temperature. Rounded conversions show an approximation mark.
+- **Steps** explains how to simplify a fraction or solve an equation of the form `a × x + b = c`.
+- **Graph** plots `y = a x² + b x + c`. Set `a` to zero for a line. Switch to **Table** for exact values at five points.
+
+| Convert | Worked steps | Graph in dark mode |
+|---|---|---|
+| ![Converting one meter to centimeters](docs/images/calculator-convert.png) | ![Steps for simplifying a fraction](docs/images/calculator-steps.png) | ![A parabola with zoom controls](docs/images/calculator-graph-dark.png) |
+
 ## Screenshots
 
 <table>

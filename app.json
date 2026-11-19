@@ -10,7 +10,7 @@
   "categories": [
     "utilities"
   ],
-  "description": "Use large keys for addition, subtraction, multiplication and division. Browse calculation history and copy the current result to a text file.",
+  "description": "Use large keys for addition, subtraction, multiplication and division. Browse calculation history and copy the current result to a text file.\n\nOpen Tools to convert common units, see steps for simplifying fractions or solving linear equations, and plot lines or quadratics with a table of values.",
   "repo": "https://github.com/DoanNguyenTrong/kindle-primitive-calculator",
   "licence": "PolyForm-Noncommercial-1.0.0",
   "source": "hosted",

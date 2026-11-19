@@ -1,3 +1,5 @@
+mod tools;
+
 use std::fs;
 use std::io;
 use std::path::PathBuf;
@@ -42,6 +44,7 @@ pub struct View {
     directory: PathBuf,
     history: Option<usize>,
     notice: Option<String>,
+    tools: Option<tools::View>,
 }
 
 impl View {
@@ -56,6 +59,7 @@ impl View {
             directory,
             history: None,
             notice: None,
+            tools: None,
         }
     }
 
@@ -123,6 +127,7 @@ impl View {
             TextStyle::new(size).bold().right(),
         );
         canvas.button(history_button(width), "History", false, false);
+        canvas.button(tools_button(width), "Tools", false, false);
         canvas.button(copy_button(width), "Copy result", false, false);
         if let Some(notice) = &self.notice {
             canvas.text(rect(width, 40, 696, 1184, 51), notice, CAPTION.center());
@@ -155,6 +160,10 @@ impl View {
         }
         if history_button(width).contains(x, y) {
             self.history = Some(0);
+            return Change::Full;
+        }
+        if tools_button(width).contains(x, y) {
+            self.tools = Some(tools::View::default());
             return Change::Full;
         }
         if copy_button(width).contains(x, y) {
@@ -217,7 +226,9 @@ impl View {
 impl App for View {
     fn draw(&self, canvas: &mut Canvas) {
         let width = canvas.bounds().w;
-        if let Some(page) = self.history {
+        if let Some(tools) = &self.tools {
+            tools.draw(canvas);
+        } else if let Some(page) = self.history {
             self.draw_history(canvas, width, page);
         } else {
             self.draw_calculator(canvas, width);
@@ -225,6 +236,14 @@ impl App for View {
     }
 
     fn input(&mut self, input: Input) -> Change {
+        if let Some(tools) = &mut self.tools {
+            let change = tools.input(input);
+            if change == Change::Exit {
+                self.tools = None;
+                return Change::Full;
+            }
+            return change;
+        }
         match input {
             Input::Tap(x, y) => self.tap(x, y),
             Input::PageBack if self.history.is_some_and(|page| page > 0) => self.page(-1),
@@ -247,11 +266,15 @@ fn rect(width: i32, x: i32, y: i32, w: i32, h: i32) -> Rect {
 }
 
 fn history_button(width: i32) -> Rect {
-    rect(width, 40, 565, 570, 106)
+    rect(width, 40, 565, 380, 106)
+}
+
+fn tools_button(width: i32) -> Rect {
+    rect(width, 442, 565, 380, 106)
 }
 
 fn copy_button(width: i32) -> Rect {
-    rect(width, 654, 565, 570, 106)
+    rect(width, 844, 565, 380, 106)
 }
 
 fn key_rect(width: i32, row: usize, column: usize) -> Rect {

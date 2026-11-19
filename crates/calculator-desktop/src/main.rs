@@ -51,6 +51,34 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         &frame(&app, &mut canvas, false),
     )?;
     assert_eq!(app.input(Input::PageBack), Change::Full);
+    let tap = |app: &mut View, x, y, expected| assert_eq!(app.input(Input::Tap(x, y)), expected);
+    let mut tool_capture = |app: &View, name: &str, dark| {
+        write_png(
+            &output.join(name),
+            WIDTH,
+            HEIGHT,
+            &frame(app, &mut canvas, dark),
+        )
+    };
+    tap(&mut app, 600.0, 615.0, Change::Full);
+    tap(&mut app, 620.0, 275.0, Change::Full);
+    tap(&mut app, 620.0, 627.0, Change::Partial);
+    tool_capture(&app, "calculator-convert.png", false)?;
+    assert_eq!(app.input(Input::PageBack), Change::Full);
+    tap(&mut app, 620.0, 470.0, Change::Full);
+    tap(&mut app, 620.0, 744.0, Change::Partial);
+    tap(&mut app, 920.0, 1370.0, Change::Partial);
+    tap(&mut app, 920.0, 1370.0, Change::Partial);
+    tool_capture(&app, "calculator-steps.png", false)?;
+    assert_eq!(app.input(Input::PageBack), Change::Full);
+    tap(&mut app, 620.0, 674.0, Change::Full);
+    tap(&mut app, 156.0, 449.0, Change::Partial);
+    tap(&mut app, 750.0, 449.0, Change::Partial);
+    tool_capture(&app, "calculator-graph-dark.png", true)?;
+    tap(&mut app, 450.0, 449.0, Change::Partial);
+    assert_eq!(app.input(Input::PageBack), Change::Full);
+    assert_eq!(app.input(Input::PageBack), Change::Full);
+    assert_eq!(app.calculator.entry(), "0.3");
     fs::remove_file(state.join("calculator.json"))?;
     fs::remove_file(state.join("result.txt"))?;
     fs::remove_dir(state)?;
