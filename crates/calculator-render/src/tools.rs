@@ -504,7 +504,7 @@ fn draw_plot(canvas: &mut Canvas, w: i32, graph: Polynomial, scale: i32) {
     }
     canvas.text(
         rect(w, 40, 1530, 1184, 100),
-        &format!("Both axes: −{scale} to {scale}"),
+        &format!("Both axes range from -{scale} to {scale}."),
         CAPTION.center(),
     );
 }

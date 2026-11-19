@@ -1,5 +1,9 @@
 # Changes
 
+## 0.1.2
+
+- Use a Kindle-compatible minus sign in the graph range label.
+
 ## 0.1.1
 
 - Convert common units for length, mass, volume, time, and temperature.
