@@ -2,27 +2,24 @@
 
 # Calculator
 
-**A decimal calculator with a large keypad for Kindle e-readers.**
+**Decimal arithmetic and history**
 
-[Install guide](INSTALL.md) · [Device notes](docs/device-notes.md) · [Changelog](CHANGELOG.md)
+[![Release](https://img.shields.io/github/v/release/PrimitiveOS/kindle-primitive-calculator?label=release)](https://github.com/PrimitiveOS/kindle-primitive-calculator/releases) [![Licence: PolyForm-Noncommercial-1.0.0](https://img.shields.io/badge/licence-PolyForm--Noncommercial--1.0.0-blue)](LICENSE) [![Store downloads](https://img.shields.io/badge/Store%20downloads-58-brightgreen)](https://primitiveos.github.io/kindle-primitive-catalog/v1/index.json)
+
+[**Download**](https://github.com/PrimitiveOS/kindle-primitive-calculator/releases/latest) · [**Install guide**](INSTALL.md) · [**Changelog**](CHANGELOG.md)
 
 </div>
 
 ---
 
-Do everyday arithmetic, look up earlier calculations, and save results as text for USB transfer or another app.
+Use large keys for addition, subtraction, multiplication and division. Browse calculation history and copy the current result to a text file.
 
-## Calculator tools
+Open Tools to convert common units, see steps for simplifying fractions or solving linear equations, and plot lines or quadratics with a table of values.
 
-Open **Tools** from the keypad.
+## Quick start
 
-- **Convert** between common units of length, mass, volume, time, and temperature. Rounded conversions show a tilde (~).
-- **Steps** explains how to simplify a fraction or solve an equation of the form `a × x + b = c`.
-- **Graph** plots `y = a x² + b x + c`. Set `a` to zero for a line. Switch to **Table** for exact values at five points.
-
-| Convert | Worked steps | Graph in dark mode |
-|---|---|---|
-| ![Converting one meter to centimeters](docs/images/calculator-convert.png) | ![Steps for simplifying a fraction](docs/images/calculator-steps.png) | ![A parabola with zoom controls](docs/images/calculator-graph-dark.png) |
+After setting up PrimitiveOS, open **Store** from Primitive Launcher. Choose **Calculator** under **Apps**,
+tap **Get**, and open it from the Launcher grid. The [install guide](INSTALL.md) also covers the standalone USB package.
 
 ## Screenshots
 
@@ -43,17 +40,6 @@ Open **Tools** from the keypad.
   result requires more precision than the calculator supports.
 - **History** keeps earlier calculations. **Copy result** writes `/mnt/us/calculator/result.txt`.
 
-## Quick start
-
-After setting up PrimitiveOS, open **Store** from Primitive Launcher. Choose **Calculator** under **Apps**,
-tap **Get**, and open it from the Launcher grid. The [install guide](INSTALL.md) also covers local USB testing.
-
-## Status
-
-Desktop simulation and local ARMHF package checks passed on the Mac.
-On an ARMHF Kindle Oasis 3 running firmware 5.18.2, Calculator showed an empty History, calculated 2 + 3 as 5,
-and returned to Launcher. Orientation and result export checks are pending. [Device notes](docs/device-notes.md)
-
 ## Develop locally
 
 Keep `doannt-kindle-tools` and `doannt-kindle-launcher` next to this checkout. The desktop command writes sample PNGs
@@ -63,6 +49,23 @@ to `build/previews`. The local `app.json` contains draft listing copy.
 cargo test --offline --locked --workspace
 cargo run --offline --locked -p calculator-desktop -- build/previews
 ```
+
+## Status
+
+| Device | Status |
+|---|---|
+| Kindle Oasis 3 (1264 × 1680, firmware 5.18.2) | Tested on hardware |
+
+**Current version: 0.1.4.** Changes are in [CHANGELOG.md](CHANGELOG.md).
+
+## Downloads
+
+**58 downloads** from Store, as of 2026-11-21. Store shows the same count on the app page.
+The count is GitHub downloads of this app's release packages, from the [Store catalog](https://primitiveos.github.io/kindle-primitive-catalog/v1/index.json).
+
+## Documentation
+
+[Install guide](INSTALL.md) · [Changelog](CHANGELOG.md) · [Device notes](docs/device-notes.md)
 
 ## Licence
 
