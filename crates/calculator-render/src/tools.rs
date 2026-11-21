@@ -336,14 +336,20 @@ impl View {
             .into_iter()
             .enumerate()
             {
+                // A tap reverses the row, as the kit's rows do.
                 let bounds = menu_row(w, i);
-                canvas.card(bounds);
+                let pressed = canvas.control_pressed(bounds, false);
+                canvas.panel(bounds, 22, 2, if pressed { 0 } else { 255 });
                 canvas.text(
                     rect(w, 80, 228 + 200 * i as i32, 1104, 58),
                     label,
-                    TextStyle::new(45).bold(),
+                    TextStyle::new(45).bold().ink(if pressed { 255 } else { 0 }),
                 );
-                canvas.text(rect(w, 80, 304 + 200 * i as i32, 1104, 60), detail, CAPTION);
+                canvas.text(
+                    rect(w, 80, 304 + 200 * i as i32, 1104, 60),
+                    detail,
+                    CAPTION.ink(if pressed { 170 } else { 85 }),
+                );
             }
             return;
         }
@@ -387,10 +393,21 @@ impl View {
             _ => ["a", "b", "c"],
         };
         for (i, label) in labels.into_iter().enumerate().take(self.input_rows()) {
+            // A tap reverses the field, as the kit's controls do.
             let bounds = self.field_rect(w, i);
+            let pressed = canvas.control_pressed(bounds, false);
             let value = self.fields[i].string();
-            canvas.panel(bounds, 16, if self.editing == Some(i) { 6 } else { 3 }, 255);
-            canvas.text(bounds.inset(20), &format!("{label}   {value}"), BODY);
+            canvas.panel(
+                bounds,
+                16,
+                if self.editing == Some(i) { 6 } else { 3 },
+                if pressed { 0 } else { 255 },
+            );
+            canvas.text(
+                bounds.inset(20),
+                &format!("{label}   {value}"),
+                BODY.ink(if pressed { 255 } else { 0 }),
+            );
         }
 
         if let Some(index) = self.editing {
