@@ -112,7 +112,7 @@ impl View {
     }
 
     fn draw_calculator(&self, canvas: &mut Canvas, width: i32) {
-        header(canvas, "Calculator", "Done");
+        header(canvas, "Calculator", "Exit");
         canvas.card(rect(width, 40, 185, 1184, 355));
         canvas.text(
             rect(width, 80, 242, 1104, 66),
