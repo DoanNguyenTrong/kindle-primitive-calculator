@@ -1,5 +1,9 @@
 # Changes
 
+## 0.1.5
+
+- The menu rows and the input fields respond to taps and reverse black and white while tapped.
+
 ## 0.1.3
 
 - Mark rounded conversions with a Kindle-compatible approximation symbol.

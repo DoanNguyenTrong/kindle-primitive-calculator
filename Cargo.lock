@@ -84,14 +84,14 @@ checksum = "fc652a48c352aef3ea3aed32080501cf3ef6ed5da78602a020c991775b0aff04"
 
 [[package]]
 name = "calculator-core"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "calculator-desktop"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "calculator-core",
  "calculator-render",
@@ -101,7 +101,7 @@ dependencies = [
 
 [[package]]
 name = "calculator-kindle"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "calculator-core",
  "calculator-render",
@@ -110,7 +110,7 @@ dependencies = [
 
 [[package]]
 name = "calculator-render"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "calculator-core",
  "primitive-app",
